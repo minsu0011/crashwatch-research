@@ -1,0 +1,5 @@
+﻿alias,stat_code,item_code1,cycle,group,enabled
+base_rate,722Y001,0101000,D,rates,1
+usdkrw_ecos,731Y001,0000001,D,fx,0
+corp_bond_aa_minus,817Y002,010300000,D,credit,0
+treasury_3y,817Y002,010200000,D,rates,0

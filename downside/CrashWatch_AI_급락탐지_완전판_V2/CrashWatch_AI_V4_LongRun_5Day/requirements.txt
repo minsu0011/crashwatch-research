@@ -1,0 +1,16 @@
+pandas>=2.2,<3.0
+numpy>=1.26,<3.0
+pyarrow>=16
+requests>=2.32
+beautifulsoup4>=4.12
+lxml>=5.2
+tqdm>=4.66
+tenacity>=8.3
+python-dotenv>=1.0
+pykrx>=1.0
+yfinance>=0.2.54
+duckdb>=1.1
+scikit-learn>=1.5
+xgboost>=2.1
+joblib>=1.4
+pytest>=8.0

@@ -1,0 +1,7 @@
+ticker,alias,name,role,enabled
+069500,kodex200,KODEX 200,long,1
+229200,kodex_kosdaq150,KODEX 코스닥150,long,1
+114800,kodex_inverse,KODEX 인버스,inverse,1
+252670,kodex_inverse2x,KODEX 200선물인버스2X,inverse,1
+122630,kodex_leverage,KODEX 레버리지,leveraged,1
+233740,kodex_kosdaq150_leverage,KODEX 코스닥150레버리지,leveraged,1

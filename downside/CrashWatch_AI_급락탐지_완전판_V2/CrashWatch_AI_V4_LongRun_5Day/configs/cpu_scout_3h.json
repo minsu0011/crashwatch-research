@@ -1,0 +1,126 @@
+{
+  "profile": "broad_thin_cpu_scout",
+  "selection_source": "crashwatch_ai_data/ablation_longrun/runs/01_global_screen/all_metrics_by_fold_seed_scope.csv",
+  "data_root": "crashwatch_ai_data",
+  "dataset": "crashwatch_ai_data/development/training_dataset_dual.parquet",
+  "runtime_hours": 3.0,
+  "state_file": "cpu_scout_3h_state.json",
+  "stop_file": "STOP_CPU_SCOUT_3H.txt",
+  "cpu": {
+    "threads": 4,
+    "affinity": [12, 13, 14, 15],
+    "physical_cores": 2,
+    "priority": "idle"
+  },
+  "model": {
+    "n_estimators": 80,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "max_bin": 128
+  },
+  "experiment": {
+    "folds": 3,
+    "validation_days": 75,
+    "purge_days": 20,
+    "min_train_days": 500,
+    "max_train_rows": 45000,
+    "calibration": "none",
+    "calibration_days": 0,
+    "seeds": [17]
+  },
+  "jobs": [
+    {
+      "job_id": "05_cpu_scout_global",
+      "run_tag": "05_cpu_scout_global",
+      "modes": ["universe", "ticker_global"],
+      "groups": [
+        "u_global_risk",
+        "u_credit_funding",
+        "u_market_microstructure",
+        "u_tail_network",
+        "u_etf_pressure",
+        "u_crypto_contagion",
+        "t_tail_dependence",
+        "t_fundamental_quality",
+        "t_liquidity_turnover",
+        "t_volume_price_pressure",
+        "t_volatility_tail",
+        "t_peer_contagion",
+        "t_ownership_governance",
+        "t_limit_stress",
+        "t_disclosure_event",
+        "t_price_trend",
+        "t_network_contagion",
+        "t_microstructure_proxy",
+        "t_range_volatility",
+        "t_macro_linkage"
+      ]
+    },
+    {
+      "job_id": "06_cpu_scout_all_buckets",
+      "run_tag": "06_cpu_scout_all_buckets",
+      "modes": ["bucket"],
+      "groups": [
+        "t_tail_dependence",
+        "t_fundamental_quality",
+        "t_liquidity_turnover",
+        "t_volume_price_pressure",
+        "t_peer_contagion",
+        "t_range_volatility"
+      ]
+    },
+    {
+      "job_id": "07_cpu_scout_all_tickers",
+      "run_tag": "07_cpu_scout_all_tickers",
+      "modes": ["ticker"],
+      "groups": [
+        "t_tail_dependence",
+        "t_fundamental_quality",
+        "t_liquidity_turnover",
+        "t_volume_price_pressure",
+        "t_peer_contagion",
+        "t_range_volatility"
+      ]
+    },
+    {
+      "job_id": "08_cpu_scout_global_robustness",
+      "run_tag": "08_cpu_scout_global_robustness",
+      "modes": ["universe", "ticker_global"],
+      "seeds": [43, 101],
+      "groups": [
+        "u_global_risk",
+        "u_credit_funding",
+        "u_etf_pressure",
+        "u_crypto_contagion",
+        "t_tail_dependence",
+        "t_fundamental_quality",
+        "t_liquidity_turnover",
+        "t_range_volatility",
+        "t_macro_linkage"
+      ]
+    },
+    {
+      "job_id": "09_cpu_scout_bucket_robustness",
+      "run_tag": "09_cpu_scout_bucket_robustness",
+      "modes": ["bucket"],
+      "seeds": [43],
+      "groups": [
+        "t_tail_dependence",
+        "t_fundamental_quality",
+        "t_liquidity_turnover",
+        "t_range_volatility"
+      ]
+    },
+    {
+      "job_id": "10_cpu_scout_ticker_robustness",
+      "run_tag": "10_cpu_scout_ticker_robustness",
+      "modes": ["ticker"],
+      "seeds": [43],
+      "groups": [
+        "t_tail_dependence",
+        "t_fundamental_quality",
+        "t_range_volatility"
+      ]
+    }
+  ]
+}

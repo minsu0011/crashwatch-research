@@ -1,0 +1,43 @@
+{
+  "schema_version": "base12h_v1",
+  "cache_namespace": "finance_base12h_shared_v1",
+  "default_hours": 12,
+  "outer_folds": 8,
+  "outer_seeds": [17, 43, 101, 211, 307, 401, 503, 607, 709],
+  "inner_folds": 3,
+  "inner_validation_days": 40,
+  "calibration_days": 60,
+  "calibration_purge_days": 20,
+  "global_groups": [
+    {"group": "u_financial_shorting", "priority": 100, "reason": "시장 전체 실제 공매도"},
+    {"group": "u_etf_pressure", "priority": 99, "reason": "인버스·레버리지 ETF 압력"},
+    {"group": "u_financial_market", "priority": 98, "reason": "금리·환율·신용·변동성 환경"},
+    {"group": "u_core_short_etf", "priority": 97, "reason": "공매도와 ETF 결합"},
+    {"group": "u_core_short_market", "priority": 96, "reason": "공매도와 금융시장 결합"},
+    {"group": "u_core_market_etf", "priority": 95, "reason": "금융시장과 ETF 결합"},
+    {"group": "u_core_all", "priority": 94, "reason": "핵심 전역 금융 피처 전체"},
+    {"group": "u_market_fx", "priority": 90, "reason": "원달러·글로벌 FX 하위군"},
+    {"group": "u_market_rates", "priority": 89, "reason": "기준금리·국채·기간스프레드 하위군"},
+    {"group": "u_market_credit", "priority": 88, "reason": "회사채·신용스프레드 하위군"},
+    {"group": "u_market_volatility", "priority": 87, "reason": "VIX·VKOSPI·변동성 하위군"},
+    {"group": "u_market_conditions", "priority": 86, "reason": "NFCI·STLFSI 등 금융여건 하위군"},
+    {"group": "u_market_high_missing", "priority": 80, "reason": "결측률이 높은 금융시장 피처의 부작용"},
+    {"group": "redundant_feature_cluster", "priority": 75, "reason": "정확·고상관 중복 피처 제거 효과"}
+  ],
+  "bucket_combinations": [
+    {"bucket": "battery_materials", "group": "t_financial_shorting", "priority": 93, "reason": "재현성이 가장 높았던 업종별 공매도"},
+    {"bucket": "battery_materials", "group": "t_finshort_crowding_cluster", "priority": 91, "reason": "배터리 공매도 crowding"},
+    {"bucket": "semiconductor", "group": "t_finshort_crowding_cluster", "priority": 85, "reason": "반도체 crowding 재검증"},
+    {"bucket": "automotive", "group": "t_stock_lending", "priority": 78, "reason": "자동차 대차 약한 후보 재검증"},
+    {"bucket": "defense_nuclear", "group": "t_financial_interaction", "priority": 60, "reason": "음수 후보 확인용 negative control"},
+    {"bucket": "internet_gaming", "group": "t_stock_lending", "priority": 59, "reason": "재현 실패 후보 확인용 negative control"},
+    {"bucket": "bio_healthcare", "group": "t_finshort_crowding_cluster", "priority": 58, "reason": "불안정 후보 확인용 negative control"}
+  ],
+  "success_targets": {
+    "roc_auc": 0.70,
+    "balanced_accuracy": 0.65,
+    "pr_auc_lift": 1.50,
+    "top_3pct_precision": 0.40,
+    "positive_fold_ratio": 0.75
+  }
+}

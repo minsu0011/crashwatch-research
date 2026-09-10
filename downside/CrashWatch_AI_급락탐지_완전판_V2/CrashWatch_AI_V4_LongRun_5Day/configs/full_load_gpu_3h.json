@@ -1,0 +1,68 @@
+{
+  "profile": "FullLoadGPU3h",
+  "data_root": "crashwatch_ai_data",
+  "dataset": "crashwatch_ai_data/development/training_dataset_dual.parquet",
+  "runtime_hours": 3.0,
+  "state_file": "full_load_gpu_3h_state.json",
+  "stop_file": "STOP_FULL_LOAD_GPU_3H.txt",
+  "log_dir": "full_load_gpu_3h_logs",
+  "execution": {
+    "gpu_sealed": false,
+    "emergency_gpu_temp_c": 90
+  },
+  "cpu": {
+    "threads": 16,
+    "affinity": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    "physical_cores": 8,
+    "priority": "normal"
+  },
+  "model": {
+    "n_estimators": 420,
+    "max_depth": 6,
+    "learning_rate": 0.04,
+    "max_bin": 256
+  },
+  "experiment": {
+    "folds": 3,
+    "validation_days": 75,
+    "purge_days": 20,
+    "min_train_days": 500,
+    "max_train_rows": 300000,
+    "calibration": "sigmoid",
+    "calibration_days": 60,
+    "seeds": [17]
+  },
+  "jobs": [
+    {
+      "job_id": "11_full_global",
+      "run_tag": "11_full_global",
+      "modes": ["universe", "ticker_global"],
+      "folds": 6,
+      "seeds": [17, 43],
+      "groups": [
+        "u_global_risk", "u_credit_funding", "u_market_microstructure", "u_tail_network", "u_etf_pressure", "u_crypto_contagion",
+        "t_tail_dependence", "t_fundamental_quality", "t_liquidity_turnover", "t_volume_price_pressure", "t_volatility_tail", "t_peer_contagion",
+        "t_ownership_governance", "t_limit_stress", "t_disclosure_event", "t_price_trend", "t_network_contagion", "t_microstructure_proxy",
+        "t_range_volatility", "t_macro_linkage"
+      ]
+    },
+    {
+      "job_id": "12_full_buckets",
+      "run_tag": "12_full_buckets",
+      "modes": ["bucket"],
+      "folds": 4,
+      "groups": [
+        "t_tail_dependence", "t_fundamental_quality", "t_liquidity_turnover", "t_volume_price_pressure", "t_peer_contagion", "t_range_volatility"
+      ]
+    },
+    {
+      "job_id": "13_full_tickers",
+      "run_tag": "13_full_tickers",
+      "modes": ["ticker"],
+      "folds": 3,
+      "groups": [
+        "t_tail_dependence", "t_fundamental_quality", "t_liquidity_turnover", "t_volume_price_pressure", "t_peer_contagion", "t_range_volatility"
+      ]
+    }
+  ]
+}

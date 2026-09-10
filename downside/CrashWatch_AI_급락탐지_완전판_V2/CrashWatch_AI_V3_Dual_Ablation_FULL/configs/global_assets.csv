@@ -1,0 +1,17 @@
+﻿alias,symbol,group,enabled
+kospi,^KS11,market_index,1
+kosdaq,^KQ11,market_index,1
+sp500,^GSPC,global_equity,1
+nasdaq,^IXIC,global_equity,1
+sox,^SOX,semiconductor,1
+vix,^VIX,volatility,1
+usdkrw,KRW=X,fx,1
+dxy,DX-Y.NYB,fx,1
+us10y,^TNX,rates,1
+btc,BTC-USD,crypto,1
+eth,ETH-USD,crypto,1
+wti,CL=F,commodity,1
+copper,HG=F,commodity,1
+gold,GC=F,commodity,1
+lithium_etf,LIT,battery_proxy,1
+shipping_etf,BDRY,shipping_proxy,1

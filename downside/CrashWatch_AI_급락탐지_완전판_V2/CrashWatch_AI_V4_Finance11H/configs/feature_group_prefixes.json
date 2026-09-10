@@ -1,0 +1,119 @@
+{
+  "universe": {
+    "u_market_trend": [
+      "u_market_"
+    ],
+    "u_market_breadth": [
+      "u_breadth_",
+      "u_dispersion_"
+    ],
+    "u_market_volatility": [
+      "u_vol_",
+      "u_tail_"
+    ],
+    "u_market_liquidity": [
+      "u_liq_"
+    ],
+    "u_aggregate_flow": [
+      "u_flow_"
+    ],
+    "u_aggregate_shorting": [
+      "u_short_"
+    ],
+    "u_global_risk": [
+      "u_global_"
+    ],
+    "u_macro_rates_fx": [
+      "u_macro_"
+    ],
+    "u_crypto_contagion": [
+      "u_crypto_"
+    ],
+    "u_realestate_korea": [
+      "u_realestate_"
+    ],
+    "u_regime_interaction": [
+      "u_interaction_"
+    ],
+    "u_market_microstructure": [
+      "u_micro_"
+    ],
+    "u_tail_network": [
+      "u_tailnet_"
+    ],
+    "u_attention": [
+      "u_attention_"
+    ],
+    "u_derivatives_risk": [
+      "u_deriv_"
+    ],
+    "u_credit_funding": [
+      "u_credit_"
+    ],
+    "u_etf_pressure": [
+      "u_etf_"
+    ]
+  },
+  "ticker": {
+    "t_price_trend": [
+      "t_price_"
+    ],
+    "t_volatility_tail": [
+      "t_vol_",
+      "t_tail_"
+    ],
+    "t_liquidity_turnover": [
+      "t_liq_"
+    ],
+    "t_investor_flow": [
+      "t_flow_",
+      "t_foreign_"
+    ],
+    "t_short_selling": [
+      "t_short_"
+    ],
+    "t_valuation_size": [
+      "t_value_",
+      "t_size_"
+    ],
+    "t_peer_contagion": [
+      "t_peer_"
+    ],
+    "t_disclosure_event": [
+      "t_event_"
+    ],
+    "t_macro_linkage": [
+      "t_link_"
+    ],
+    "t_interaction": [
+      "t_interaction_"
+    ],
+    "t_range_volatility": [
+      "t_rangevol_"
+    ],
+    "t_microstructure_proxy": [
+      "t_micro_"
+    ],
+    "t_tail_dependence": [
+      "t_taildep_"
+    ],
+    "t_volume_price_pressure": [
+      "t_pressure_"
+    ],
+    "t_limit_stress": [
+      "t_limit_"
+    ],
+    "t_attention": [
+      "t_attention_"
+    ],
+    "t_ownership_governance": [
+      "t_owner_"
+    ],
+    "t_fundamental_quality": [
+      "t_quality_"
+    ],
+    "t_network_contagion": [
+      "t_network_"
+    ]
+  }
+}

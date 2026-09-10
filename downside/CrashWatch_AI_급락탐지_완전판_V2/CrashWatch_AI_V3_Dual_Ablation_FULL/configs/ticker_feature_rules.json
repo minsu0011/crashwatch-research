@@ -1,0 +1,113 @@
+{
+  "semiconductor": {
+    "links": [
+      "usdkrw",
+      "sox",
+      "nasdaq"
+    ],
+    "event_keywords": [
+      "수주",
+      "공급계약",
+      "시설투자",
+      "증설",
+      "반도체"
+    ]
+  },
+  "automotive": {
+    "links": [
+      "usdkrw",
+      "wti",
+      "sp500"
+    ],
+    "event_keywords": [
+      "판매",
+      "리콜",
+      "파업",
+      "배당",
+      "자사주"
+    ]
+  },
+  "battery_materials": {
+    "links": [
+      "lithium_etf",
+      "copper",
+      "usdkrw"
+    ],
+    "event_keywords": [
+      "공급계약",
+      "증설",
+      "전기차",
+      "배터리",
+      "양극재"
+    ]
+  },
+  "bio_healthcare": {
+    "links": [
+      "kosdaq",
+      "nasdaq"
+    ],
+    "event_keywords": [
+      "임상",
+      "허가",
+      "기술이전",
+      "품목허가",
+      "계약"
+    ]
+  },
+  "internet_gaming": {
+    "links": [
+      "nasdaq",
+      "usdkrw",
+      "btc"
+    ],
+    "event_keywords": [
+      "규제",
+      "신작",
+      "출시",
+      "매각",
+      "오버행"
+    ]
+  },
+  "finance": {
+    "links": [
+      "us10y",
+      "usdkrw",
+      "kospi"
+    ],
+    "event_keywords": [
+      "배당",
+      "자사주",
+      "충당금",
+      "밸류업",
+      "유상증자"
+    ]
+  },
+  "defense_nuclear": {
+    "links": [
+      "usdkrw",
+      "wti",
+      "kospi"
+    ],
+    "event_keywords": [
+      "수주",
+      "공급계약",
+      "원전",
+      "방산",
+      "수출"
+    ]
+  },
+  "shipbuilding": {
+    "links": [
+      "usdkrw",
+      "wti",
+      "shipping_etf"
+    ],
+    "event_keywords": [
+      "수주",
+      "선박",
+      "해양",
+      "공급계약",
+      "수주잔고"
+    ]
+  }
+}

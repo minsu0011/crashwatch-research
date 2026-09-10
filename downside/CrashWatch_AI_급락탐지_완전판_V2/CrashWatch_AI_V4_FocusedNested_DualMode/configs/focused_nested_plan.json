@@ -1,0 +1,191 @@
+{
+  "schema_version": "focused_nested_v1",
+  "cache_namespace": "finance_nested_focus_v1",
+  "outer_folds": 8,
+  "outer_seeds": [
+    17,
+    43,
+    101
+  ],
+  "inner_folds": 3,
+  "inner_validation_days": 40,
+  "calibration_days": 60,
+  "calibration_purge_days": 20,
+  "global_groups": [
+    {
+      "group": "u_financial_shorting",
+      "reason": "9개 seed에서 반복적으로 양수였던 시장 공매도 압력"
+    },
+    {
+      "group": "u_financial_market",
+      "reason": "전역 금융시장 스트레스 후보"
+    },
+    {
+      "group": "u_etf_pressure",
+      "reason": "ETF 레버리지·인버스 자금압력 후보"
+    }
+  ],
+  "bucket_combinations": [
+    {
+      "bucket": "battery_materials",
+      "group": "t_financial_shorting",
+      "reason": "배터리·소재 종목별 실제 공매도"
+    },
+    {
+      "bucket": "defense_nuclear",
+      "group": "t_financial_interaction",
+      "reason": "방산·원전 금융 상호작용"
+    },
+    {
+      "bucket": "internet_gaming",
+      "group": "t_stock_lending",
+      "reason": "인터넷·게임 종목별 대차"
+    },
+    {
+      "bucket": "bio_healthcare",
+      "group": "t_finshort_crowding_cluster",
+      "reason": "바이오·헬스케어 공매도 crowding"
+    },
+    {
+      "bucket": "semiconductor",
+      "group": "t_finshort_crowding_cluster",
+      "reason": "반도체 공매도 crowding"
+    },
+    {
+      "bucket": "automotive",
+      "group": "t_stock_lending",
+      "reason": "자동차 종목별 대차"
+    }
+  ],
+  "extension": {
+    "enabled": true,
+    "reason": "기존 양의 후보의 중복·시너지와 선정 6개 업종의 금융 하위그룹 교차 반응을 10시간 풀로드 예산에서 검증",
+    "global_groups": [
+      {
+        "group": "t_financial_flow",
+        "reason": "기존 Finance11H 8-fold에서 PR-AUC loss 평균이 양수였던 종목 수급 그룹"
+      },
+      {
+        "group": "u_financial_flow",
+        "reason": "전역 수급의 독립 효용 확인"
+      },
+      {
+        "group": "u_joint_shorting_market",
+        "components": [
+          "u_financial_shorting",
+          "u_financial_market"
+        ],
+        "reason": "시장 공매도와 금융시장 스트레스의 합산 효용"
+      },
+      {
+        "group": "u_joint_shorting_etf",
+        "components": [
+          "u_financial_shorting",
+          "u_etf_pressure"
+        ],
+        "reason": "시장 공매도와 ETF 압력의 중복·보완 관계"
+      },
+      {
+        "group": "u_joint_market_etf",
+        "components": [
+          "u_financial_market",
+          "u_etf_pressure"
+        ],
+        "reason": "금융시장 스트레스와 ETF 압력의 중복·보완 관계"
+      },
+      {
+        "group": "u_joint_shorting_market_etf",
+        "components": [
+          "u_financial_shorting",
+          "u_financial_market",
+          "u_etf_pressure"
+        ],
+        "reason": "핵심 전역 후보 3개 전체의 합산 효용"
+      }
+    ],
+    "buckets": [
+      "battery_materials",
+      "defense_nuclear",
+      "internet_gaming",
+      "bio_healthcare",
+      "semiconductor",
+      "automotive"
+    ],
+    "bucket_groups": [
+      {
+        "group": "t_financial_shorting",
+        "reason": "업종별 실제 공매도 효용 지도"
+      },
+      {
+        "group": "t_stock_lending",
+        "reason": "업종별 대차 효용 지도"
+      },
+      {
+        "group": "t_financial_interaction",
+        "reason": "업종별 금융 상호작용 효용 지도"
+      },
+      {
+        "group": "t_finshort_crowding_cluster",
+        "reason": "업종별 공매도 crowding 효용 지도"
+      },
+      {
+        "group": "t_financial_flow",
+        "reason": "업종별 투자자 수급 효용 지도"
+      },
+      {
+        "group": "t_joint_shorting_lending",
+        "components": [
+          "t_financial_shorting",
+          "t_stock_lending"
+        ],
+        "reason": "공매도와 대차의 합산 효용"
+      },
+      {
+        "group": "t_joint_shorting_interaction",
+        "components": [
+          "t_financial_shorting",
+          "t_financial_interaction"
+        ],
+        "reason": "공매도와 금융 상호작용의 합산 효용"
+      },
+      {
+        "group": "t_joint_lending_flow",
+        "components": [
+          "t_stock_lending",
+          "t_financial_flow"
+        ],
+        "reason": "대차와 투자자 수급의 합산 효용"
+      },
+      {
+        "group": "t_joint_finance_all",
+        "components": [
+          "t_financial_shorting",
+          "t_stock_lending",
+          "t_financial_interaction",
+          "t_financial_flow"
+        ],
+        "reason": "종목 금융 피처 전체 묶음의 합산 효용"
+      }
+    ],
+    "additional_seeds": [
+      79,
+      137,
+      211,
+      307,
+      419,
+      541
+    ]
+  },
+  "calibration_methods": [
+    "none",
+    "sigmoid",
+    "beta",
+    "isotonic"
+  ],
+  "success_targets": {
+    "roc_auc": 0.7,
+    "balanced_accuracy": 0.7,
+    "pr_auc_lift": 1.5,
+    "top_3pct_precision": 0.4
+  }
+}

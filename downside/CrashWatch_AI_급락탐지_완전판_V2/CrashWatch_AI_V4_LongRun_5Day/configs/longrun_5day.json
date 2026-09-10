@@ -1,0 +1,57 @@
+{
+  "data_root": "crashwatch_ai_data",
+  "dataset": "crashwatch_ai_data/development/training_dataset_dual.parquet",
+  "runtime_hours": 96,
+  "optional_stage_min_remaining_hours": 4,
+  "safety": {
+    "gpu_power_ratio": 0.78,
+    "gpu_resume_temp_c": 70,
+    "gpu_abort_temp_c": 82,
+    "gpu_hard_temp_c": 86,
+    "gpu_abort_consecutive_checks": 3,
+    "cpu_logical_cores": 8,
+    "process_priority": "below_normal",
+    "min_free_ram_gb": 5.0,
+    "hard_min_free_ram_gb": 2.0,
+    "max_process_ram_gb": 24.0,
+    "min_disk_free_gb": 20.0,
+    "hard_min_disk_free_gb": 8.0,
+    "poll_seconds": 20,
+    "cooldown_seconds": 180,
+    "between_job_cooldown_seconds": 15,
+    "max_job_retries": 3,
+    "max_single_job_hours": 20
+  },
+  "model": {
+    "n_estimators": 420,
+    "max_depth": 6,
+    "learning_rate": 0.04,
+    "max_bin": 256
+  },
+  "experiment": {
+    "target": "label_abs_crash_20",
+    "folds": 10,
+    "validation_days": 60,
+    "purge_days": 20,
+    "min_train_days": 500,
+    "max_train_rows": 300000,
+    "require_base_catalog": true,
+    "calibration": "sigmoid",
+    "calibration_days": 60,
+    "prefer_gpu": true,
+    "seeds_primary": [17, 43, 101, 151, 197],
+    "seeds_robustness": [211, 307, 401],
+    "ticker_groups_min": 4,
+    "ticker_groups_max": 6,
+    "ticker_min_abs_delta": 0.005,
+    "ticker_max_fdr_q": 0.2,
+    "fallback_ticker_groups": [
+      "t_price_trend",
+      "t_volatility_tail",
+      "t_range_volatility",
+      "t_microstructure_proxy",
+      "t_tail_dependence",
+      "t_disclosure_event"
+    ]
+  }
+}

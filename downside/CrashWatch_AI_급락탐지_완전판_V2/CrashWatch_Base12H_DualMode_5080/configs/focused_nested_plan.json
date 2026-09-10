@@ -1,0 +1,72 @@
+{
+  "schema_version": "focused_nested_v1",
+  "cache_namespace": "finance_nested_focus_v1",
+  "outer_folds": 8,
+  "outer_seeds": [
+    17,
+    43,
+    101
+  ],
+  "inner_folds": 3,
+  "inner_validation_days": 40,
+  "calibration_days": 60,
+  "calibration_purge_days": 20,
+  "global_groups": [
+    {
+      "group": "u_financial_shorting",
+      "reason": "9개 seed에서 반복적으로 양수였던 시장 공매도 압력"
+    },
+    {
+      "group": "u_financial_market",
+      "reason": "전역 금융시장 스트레스 후보"
+    },
+    {
+      "group": "u_etf_pressure",
+      "reason": "ETF 레버리지·인버스 자금압력 후보"
+    }
+  ],
+  "bucket_combinations": [
+    {
+      "bucket": "battery_materials",
+      "group": "t_financial_shorting",
+      "reason": "배터리·소재 종목별 실제 공매도"
+    },
+    {
+      "bucket": "defense_nuclear",
+      "group": "t_financial_interaction",
+      "reason": "방산·원전 금융 상호작용"
+    },
+    {
+      "bucket": "internet_gaming",
+      "group": "t_stock_lending",
+      "reason": "인터넷·게임 종목별 대차"
+    },
+    {
+      "bucket": "bio_healthcare",
+      "group": "t_finshort_crowding_cluster",
+      "reason": "바이오·헬스케어 공매도 crowding"
+    },
+    {
+      "bucket": "semiconductor",
+      "group": "t_finshort_crowding_cluster",
+      "reason": "반도체 공매도 crowding"
+    },
+    {
+      "bucket": "automotive",
+      "group": "t_stock_lending",
+      "reason": "자동차 종목별 대차"
+    }
+  ],
+  "calibration_methods": [
+    "none",
+    "sigmoid",
+    "beta",
+    "isotonic"
+  ],
+  "success_targets": {
+    "roc_auc": 0.7,
+    "balanced_accuracy": 0.7,
+    "pr_auc_lift": 1.5,
+    "top_3pct_precision": 0.4
+  }
+}

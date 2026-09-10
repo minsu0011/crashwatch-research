@@ -1,0 +1,15 @@
+namespace,group,prefix,default_enabled,data_source,point_in_time_status
+universe,u_market_microstructure,u_micro_,1,KRX OHLCV/거래대금,safe_eod
+universe,u_tail_network,u_tailnet_,1,KRX 종목 수익률 패널,safe_eod
+universe,u_credit_funding,u_credit_,1,FRED,source_revision_possible
+universe,u_etf_pressure,u_etf_,1,KRX ETF OHLCV,safe_eod
+universe,u_derivatives_risk,u_deriv_,0,KRX 공식 다운로드 CSV,depends_on_available_from
+universe,u_attention,u_attention_,0,NAVER DataLab,unsafe_revised_scale
+ticker,t_range_volatility,t_rangevol_,1,일봉 OHLC,safe_eod
+ticker,t_microstructure_proxy,t_micro_,1,일봉 OHLCV/거래대금,safe_eod
+ticker,t_tail_dependence,t_taildep_,1,종목/시장 수익률,safe_eod
+ticker,t_volume_price_pressure,t_pressure_,1,일봉 OHLCV,safe_eod
+ticker,t_limit_stress,t_limit_,1,일봉 OHLC,safe_eod
+ticker,t_ownership_governance,t_owner_,1,OpenDART 지분공시,safe_next_trading_day
+ticker,t_fundamental_quality,t_quality_,1,OpenDART 주요계정,conservative_release_lag
+ticker,t_attention,t_attention_,0,NAVER DataLab,unsafe_revised_scale

@@ -1,0 +1,74 @@
+{
+  "universe": {
+    "u_market_trend": [
+      "u_market_"
+    ],
+    "u_market_breadth": [
+      "u_breadth_",
+      "u_dispersion_"
+    ],
+    "u_market_volatility": [
+      "u_vol_",
+      "u_tail_"
+    ],
+    "u_market_liquidity": [
+      "u_liq_"
+    ],
+    "u_aggregate_flow": [
+      "u_flow_"
+    ],
+    "u_aggregate_shorting": [
+      "u_short_"
+    ],
+    "u_global_risk": [
+      "u_global_"
+    ],
+    "u_macro_rates_fx": [
+      "u_macro_"
+    ],
+    "u_crypto_contagion": [
+      "u_crypto_"
+    ],
+    "u_realestate_korea": [
+      "u_realestate_"
+    ],
+    "u_regime_interaction": [
+      "u_interaction_"
+    ]
+  },
+  "ticker": {
+    "t_price_trend": [
+      "t_price_"
+    ],
+    "t_volatility_tail": [
+      "t_vol_",
+      "t_tail_"
+    ],
+    "t_liquidity_turnover": [
+      "t_liq_"
+    ],
+    "t_investor_flow": [
+      "t_flow_",
+      "t_foreign_"
+    ],
+    "t_short_selling": [
+      "t_short_"
+    ],
+    "t_valuation_size": [
+      "t_value_",
+      "t_size_"
+    ],
+    "t_peer_contagion": [
+      "t_peer_"
+    ],
+    "t_disclosure_event": [
+      "t_event_"
+    ],
+    "t_macro_linkage": [
+      "t_link_"
+    ],
+    "t_interaction": [
+      "t_interaction_"
+    ]
+  }
+}

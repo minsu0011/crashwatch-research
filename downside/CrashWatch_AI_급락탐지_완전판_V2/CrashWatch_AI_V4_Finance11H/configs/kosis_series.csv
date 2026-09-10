@@ -1,0 +1,3 @@
+﻿alias,org_id,tbl_id,itm_id,obj_l1,prd_se,start_prd_de,end_prd_de,group,enabled
+housing_price_index,,,,,M,,,realestate_korea,0
+unsold_housing,,,,,M,,,realestate_korea,0

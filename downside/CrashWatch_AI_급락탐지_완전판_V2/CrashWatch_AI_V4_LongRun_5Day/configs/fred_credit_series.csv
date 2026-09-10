@@ -1,0 +1,8 @@
+alias,series_id,description,enabled
+us_high_yield_oas,BAMLH0A0HYM2,ICE BofA US High Yield Option-Adjusted Spread,1
+us_ig_oas,BAMLC0A0CM,ICE BofA US Corporate Option-Adjusted Spread,1
+nfci,NFCI,Chicago Fed National Financial Conditions Index,1
+stl_fsi,STLFSI4,St. Louis Fed Financial Stress Index,1
+fed_funds,DFF,Federal Funds Effective Rate,1
+us_2y,DGS2,US 2-Year Treasury Yield,1
+us_10y,DGS10,US 10-Year Treasury Yield,1

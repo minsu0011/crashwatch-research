@@ -1,0 +1,6 @@
+numpy>=2.0,<3
+pandas>=2.2,<3
+pyarrow>=15,<27
+scikit-learn>=1.6,<2
+lightgbm==4.7.0
+xgboost==3.3.0

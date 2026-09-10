@@ -1,0 +1,8 @@
+numpy>=2.0
+pandas>=2.2
+scikit-learn>=1.5
+lightgbm>=4.5
+xgboost>=3.0
+psutil>=6.0
+pyarrow>=17.0
+pynvml>=12.0

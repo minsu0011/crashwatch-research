@@ -1,0 +1,12 @@
+pykrx==1.2.8
+pandas>=2.2,<3.0
+numpy>=2.0,<2.3
+pyarrow>=16
+requests>=2.32
+python-dotenv>=1.0
+tenacity>=8.2
+lxml>=5.0
+beautifulsoup4>=4.12
+html5lib>=1.1
+xmltodict>=0.13
+-r requirements_finance11h.txt

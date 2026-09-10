@@ -1,0 +1,17 @@
+numpy>=2.0,<3
+pandas>=2.2,<3
+pyarrow>=17
+scipy>=1.14
+scikit-learn>=1.6
+psutil>=6
+python-dotenv>=1
+requests>=2.32
+tenacity>=8.3
+xmltodict>=0.14
+pykrx>=1.0
+yfinance>=0.2.54
+xgboost>=3.0
+lightgbm>=4.6
+catboost>=1.2.8
+numba>=0.61
+pytest>=8.0
