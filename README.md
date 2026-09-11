@@ -55,8 +55,10 @@ branch별 평가 조건이 달라 직접적인 개선치로 비교하지 않았�
 python deployment/crashwatch_predict.py --help
 ```
 
-이 명령은 예측 인터페이스 안내다. 학습용 feature frame, fold 및 학습 가중치는 별도 준비해야 하며, 실행별 인자는 [실행 안내](docs/wiki/How-to-Run.md)에서 구분했다. 외부 구현과 데이터 이용 범위는 [출처](ATTRIBUTION.md)에 남겼다.
+이 명령은 예측 인터페이스 안내다. 학습용 feature frame, fold 및 학습 가중치는 별도 준비해야 하며, 실행별 인자는 [실행 안내](https://github.com/minsu0011/crashwatch-research/wiki/How-to-Run)에서 구분했다. 외부 구현과 데이터 이용 범위는 [출처](ATTRIBUTION.md)에 남겼다.
 
 ## 상세 문서
 
-[연구 지도](docs/wiki/Home.md) · [개발 과정](docs/wiki/Development-Journey.md) · [모델 발전](docs/wiki/Model-Evolution.md) · [오경보](docs/wiki/Hard-False-Positives.md) · [선후행 교정](docs/wiki/Lead-Lag.md) · [실험 결정](docs/wiki/Experiments-and-Decisions.md) · [결과](docs/wiki/Validation-and-Results.md)
+[연구 지도](https://github.com/minsu0011/crashwatch-research/wiki/Home) · [개발 과정](https://github.com/minsu0011/crashwatch-research/wiki/Development-Journey) · [모델 발전](https://github.com/minsu0011/crashwatch-research/wiki/Model-Evolution) · [오경보](https://github.com/minsu0011/crashwatch-research/wiki/Hard-False-Positives) · [선후행 교정](https://github.com/minsu0011/crashwatch-research/wiki/Lead-Lag) · [실험 결정](https://github.com/minsu0011/crashwatch-research/wiki/Experiments-and-Decisions) · [결과](https://github.com/minsu0011/crashwatch-research/wiki/Validation-and-Results)
+
+문서의 저장소 내부 사본은 [docs/wiki](docs/wiki)에 함께 보관한다.
